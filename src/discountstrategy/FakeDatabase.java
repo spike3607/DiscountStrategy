@@ -17,7 +17,7 @@ public class FakeDatabase {
         new Customer("Steve")
     };
     
-    private final Product[] itemsData = 
+    private final Product[] productsData = 
     {
         new Product(1111111, 30.00, "Hat", new DiscountByPercent(.10)),
         new Product(2222222, 50.00, "Shirt", new DiscountByQuantity(2,.33)),
@@ -31,6 +31,11 @@ public class FakeDatabase {
     
     public Product findProductbySKU(int sku) {
         Product foundProduct = new Product();
+        
+        for (Product p : productsData) {
+            if (sku == p.getSku())
+                foundProduct = p;
+        }
         
         return foundProduct;
     }
