@@ -13,12 +13,12 @@ public class LineItem {
     private int itemSKU;
     private int quantity;
     
-    private DiscountStrategy discount;
+    private DiscountInterfaceStrategy discount;
 
     public LineItem() {
     }
 
-    public LineItem(int itemSKU, int quantity, DiscountStrategy discount) {
+    public LineItem(int itemSKU, int quantity, DiscountInterfaceStrategy discount) {
         this.itemSKU = itemSKU;
         this.quantity = quantity;
         this.discount = discount;
@@ -40,11 +40,11 @@ public class LineItem {
         this.quantity = quantity;
     }
 
-    public DiscountStrategy getDiscount() {
+    public DiscountInterfaceStrategy getDiscount() {
         return discount;
     }
 
-    public void setDiscount(DiscountStrategy discount) {
+    public void setDiscount(DiscountInterfaceStrategy discount) {
         this.discount = discount;
     }
     

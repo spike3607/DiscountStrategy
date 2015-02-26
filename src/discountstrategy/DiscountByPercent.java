@@ -9,6 +9,27 @@ package discountstrategy;
  *
  * @author mschoenauer1
  */
-public class DiscountByPercent {
+public class DiscountByPercent implements DiscountInterfaceStrategy {
+    private double rate;
+
+    public DiscountByPercent() {
+    }
+
+    public DiscountByPercent(double rate) {
+        this.rate = rate;
+    }
+
+    public double getRate() {
+        return rate;
+    }
+
+    public void setRate(double rate) {
+        this.rate = rate;
+    }
+    
+    @Override
+    public double getDiscountAmount(double price) {
+        return price * rate;
+    }
     
 }
