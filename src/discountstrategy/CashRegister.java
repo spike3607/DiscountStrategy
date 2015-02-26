@@ -5,18 +5,18 @@
  */
 package discountstrategy;
 
+import java.util.Date;
+
 /**
  *
  * @author mschoenauer1
  */
 public class CashRegister {
     private Receipt receipt;
+    private FakeDatabase db;
 
     public CashRegister() {
-    }
-
-    public CashRegister(Receipt receipt) {
-        this.receipt = receipt;
+        db = new FakeDatabase();
     }
 
     public Receipt getReceipt() {
@@ -27,11 +27,16 @@ public class CashRegister {
         this.receipt = receipt;
     }
     
-    public void beginSale() {
-        receipt = new Receipt();
+    public void beginSale(int customerID) {
+        Customer newCustomer = new Customer();
+        Date date = new Date();
+        
+        //Lookup Customer from database
+        
+        receipt = new Receipt(newCustomer, date);
     }
     
-    public void addItemToSaleBySKU(String sku, int quantity) {
+    public void addItemToSaleBySKU(int sku, int quantity) {
         //Lookup item from a database
         
         //Add item to receipt

@@ -10,44 +10,22 @@ package discountstrategy;
  * @author mschoenauer1
  */
 public class Customer {
-    private String firstName;
-    private String lastName;
-    private int idNumber;
+    private String name;
 
     public Customer() {
-        this.firstName = "Blank";
-        this.lastName = "Blank";
-        this.idNumber = -1;
+        this.name = "Blank";
     }
 
-    public Customer(String firstName, String lastName, int idNumber) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.idNumber = idNumber;
+    public Customer(String firstName) {
+        this.name = firstName;
     }
 
     public String getFirstName() {
-        return firstName;
+        return name;
     }
 
     public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public int getIdNumber() {
-        return idNumber;
-    }
-
-    public void setIdNumber(int idNumber) {
-        this.idNumber = idNumber;
+        this.name = firstName;
     }
     
     

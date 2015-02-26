@@ -10,26 +10,23 @@ package discountstrategy;
  * @author mschoenauer1
  */
 public class LineItem {
-    private int itemSKU;
+    private Product product;
     private int quantity;
-    
-    private DiscountInterfaceStrategy discount;
 
     public LineItem() {
     }
 
-    public LineItem(int itemSKU, int quantity, DiscountInterfaceStrategy discount) {
-        this.itemSKU = itemSKU;
+    public LineItem(Product product, int quantity) {
+        this.product = product;
         this.quantity = quantity;
-        this.discount = discount;
     }
 
-    public int getItemSKU() {
-        return itemSKU;
+    public Product getProduct() {
+        return product;
     }
 
-    public void setItemSKU(int itemSKU) {
-        this.itemSKU = itemSKU;
+    public void setProduct(Product product) {
+        this.product = product;
     }
 
     public int getQuantity() {
@@ -39,14 +36,11 @@ public class LineItem {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-
-    public DiscountInterfaceStrategy getDiscount() {
-        return discount;
-    }
-
-    public void setDiscount(DiscountInterfaceStrategy discount) {
-        this.discount = discount;
-    }
     
-    
+    public double getTotal() {
+        
+        
+        
+        return 0.0;
+    }
 }
