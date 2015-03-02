@@ -11,6 +11,6 @@ package discountstrategy;
  */
 public interface DiscountInterfaceStrategy {
 
-    double getDiscountAmount(double price);
+    double getDiscountAmount(double price, int quantity);
     
 }

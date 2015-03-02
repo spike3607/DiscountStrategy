@@ -18,7 +18,7 @@ public class DiscountByFlatRate implements DiscountInterfaceStrategy {
     
     
     @Override
-    public double getDiscountAmount(double price) {
-        return flatRate;
+    public double getDiscountAmount(double price, int quantity) {
+        return flatRate * quantity;
     }
 }

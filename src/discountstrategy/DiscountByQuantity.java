@@ -12,14 +12,14 @@ package discountstrategy;
 public class DiscountByQuantity implements DiscountInterfaceStrategy {
     
     private int quantityNeededForDiscount;
-    private double flatRateOff;
+    private double rate;
 
     public DiscountByQuantity() {
     }
 
-    public DiscountByQuantity(int qnfd, double flatRateOff) {
+    public DiscountByQuantity(int qnfd, double rate) {
         this.quantityNeededForDiscount = qnfd;
-        this.flatRateOff = flatRateOff;
+        this.rate = rate;
     }
 
     public int getQuantity() {
@@ -30,17 +30,29 @@ public class DiscountByQuantity implements DiscountInterfaceStrategy {
         this.quantityNeededForDiscount = quantity;
     }
 
-    public double getFlatRateOff() {
-        return flatRateOff;
+    public int getQuantityNeededForDiscount() {
+        return quantityNeededForDiscount;
     }
 
-    public void setFlatRateOff(double flatRateOff) {
-        this.flatRateOff = flatRateOff;
+    public void setQuantityNeededForDiscount(int quantityNeededForDiscount) {
+        this.quantityNeededForDiscount = quantityNeededForDiscount;
     }
-      
+
+    public double getRate() {
+        return rate;
+    }
+
+    public void setRate(double rate) {
+        this.rate = rate;
+    }
+
     @Override
-    public double getDiscountAmount(double price) {
-        return 0.0;
+    public double getDiscountAmount(double price, int quantity) {
+        if (quantity >= quantityNeededForDiscount) {
+            return (price * quantity) * rate;
+        }
+        else
+            return 0.0;
     }
 
 }

@@ -28,8 +28,8 @@ public class DiscountByPercent implements DiscountInterfaceStrategy {
     }
     
     @Override
-    public double getDiscountAmount(double price) {
-        return price * rate;
+    public double getDiscountAmount(double price, int quantity) {
+        return (price * quantity) * rate;
     }
     
 }

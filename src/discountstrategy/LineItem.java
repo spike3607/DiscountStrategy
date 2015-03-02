@@ -37,10 +37,18 @@ public class LineItem {
         this.quantity = quantity;
     }
     
-    public double getTotal() {
-        
-        
-        
-        return 0.0;
+    public double getSubTotal() {
+        return product.getPrice() * quantity;
+    }
+    
+    public double getDiscount() {
+        return product.getDiscount(quantity);
+    }
+    
+    public static void main(String[] args) {
+        LineItem li = new LineItem (new Product(3333333, 60.00, "Pants", new DiscountByFlatRate(10.00)), 5);
+        System.out.println(li.getSubTotal());
+        System.out.println(li.getDiscount());
+        System.out.println(li.getSubTotal() - li.getDiscount());
     }
 }

@@ -50,5 +50,9 @@ public class Product {
         this.description = description;
     }
     
+    public double getDiscount(int quantity) {
+        return discount.getDiscountAmount(price, quantity);
+    }
+    
     
 }
