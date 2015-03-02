@@ -12,9 +12,9 @@ package discountstrategy;
 public class FakeDatabase {
     private final Customer[] customerData = 
     {
-        new Customer("Mike"),
-        new Customer("Dave"),
-        new Customer("Steve")
+        new Customer("Mike Schoenauer"),
+        new Customer("Dave Merkel"),
+        new Customer("Steve Schoenauer")
     };
     
     private final Product[] productsData = 
@@ -33,10 +33,11 @@ public class FakeDatabase {
         Product foundProduct = new Product();
         
         for (Product p : productsData) {
-            if (sku == p.getSku())
+            if (sku == p.getSku()) {
                 foundProduct = p;
+                return foundProduct;
+            }
         }
-        
         return foundProduct;
     }
 }

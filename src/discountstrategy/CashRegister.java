@@ -18,31 +18,26 @@ public class CashRegister {
     public CashRegister() {
         db = new FakeDatabase();
     }
-
-    public Receipt getReceipt() {
-        return receipt;
-    }
-
-    public void setReceipt(Receipt receipt) {
-        this.receipt = receipt;
-    }
     
     public void beginSale(int customerID) {
-        Customer newCustomer = new Customer();
         Date date = new Date();
         
         //Lookup Customer from database
+        Customer c = db.findCustomerByIndex(customerID);
         
-        receipt = new Receipt(newCustomer, date);
+        receipt = new Receipt(c, date);
     }
     
     public void addItemToSaleBySKU(int sku, int quantity) {
         //Lookup item from a database
+        LineItem li = new LineItem(db.findProductbySKU(sku),quantity);
         
         //Add item to receipt
+        receipt.addItem(li);
     }
     
     public void endSale() {
         //generate receipt
+        receipt.printReceipt();
     }
 }

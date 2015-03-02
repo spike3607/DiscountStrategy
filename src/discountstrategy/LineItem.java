@@ -38,17 +38,17 @@ public class LineItem {
     }
     
     public double getSubTotal() {
-        return product.getPrice() * quantity;
+        return product.getPrice() * quantity - getDiscount();
     }
     
     public double getDiscount() {
         return product.getDiscount(quantity);
     }
     
-    public static void main(String[] args) {
-        LineItem li = new LineItem (new Product(3333333, 60.00, "Pants", new DiscountByFlatRate(10.00)), 5);
-        System.out.println(li.getSubTotal());
-        System.out.println(li.getDiscount());
-        System.out.println(li.getSubTotal() - li.getDiscount());
-    }
+//    public static void main(String[] args) {
+//        LineItem li = new LineItem (new Product(3333333, 60.00, "Pants", new DiscountByFlatRate(10.00)), 5);
+//        System.out.println(li.getSubTotal());
+//        System.out.println(li.getDiscount());
+//        System.out.println(li.getSubTotal() - li.getDiscount());
+//    }
 }

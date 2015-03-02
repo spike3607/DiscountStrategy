@@ -16,16 +16,16 @@ public class Customer {
         this.name = "Blank";
     }
 
-    public Customer(String firstName) {
-        this.name = firstName;
+    public Customer(String name) {
+        this.name = name;
     }
 
-    public String getFirstName() {
+    public String getName() {
         return name;
     }
 
-    public void setFirstName(String firstName) {
-        this.name = firstName;
+    public void setName(String name) {
+        this.name = name;
     }
     
     

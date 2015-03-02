@@ -17,6 +17,10 @@ public class Product {
     private DiscountInterfaceStrategy discount;
 
     public Product() {
+        sku = 0000000;
+        price = -1;
+        description = "blank";
+        discount = new DiscountByFlatRate(0.0);
     }
     
     public Product(int sku, double price, String description, DiscountInterfaceStrategy discount) {
